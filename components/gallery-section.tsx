@@ -3,25 +3,25 @@ import { SectionTitle } from "./section-title"
 
 const galleryImages = [
   {
-    src: "https://i.ibb.co/tTWzytrr/IMG-20251102-WA0056.jpg",
-    alt: "AI Art 1 - Kuldeep Yadav",
+    src: "https://i.ibb.co/gbqVXVv1/IMG-20260520-013355.png",
+    alt: "Friend 1",
   },
   {
-    src: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=500",
-    alt: "AI Art 2 - Digital Creation",
+    src: "https://i.ibb.co/0yW4ZDSr/IMG-20251102-WA0189.jpg",
+    alt: "Friend 2",
   },
   {
-    src: "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=500",
-    alt: "AI Art 3 - Visual Design",
+    src: "https://i.ibb.co/7tGLBnsV/IMG-20260426-WA0008.jpg",
+    alt: "Friend 3",
   },
 ]
 
 export function GallerySection() {
   return (
     <section id="gallery" className="py-20 px-[8%] text-center bg-background">
-      <SectionTitle>My AI Art &amp; Creations</SectionTitle>
+      <SectionTitle>Friends</SectionTitle>
       <p className="text-muted-foreground mb-8">
-        Mere banaye gaye kuch behtareen hyper-realistic 3D designs
+        Mere doston ki kuch yaadgaar aur khaas tasveerein
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-2">
@@ -36,7 +36,7 @@ export function GallerySection() {
               alt={img.alt}
               width={500}
               height={280}
-              className="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+              className="w-full h-[380px] object-cover transition-all duration-400"
               style={{
                 display: "block",
               }}

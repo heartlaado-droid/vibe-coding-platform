@@ -26,7 +26,7 @@ export function HeroSection() {
         href="#gallery"
         className="inline-block px-9 py-3 bg-primary text-primary-foreground font-semibold rounded-full uppercase tracking-wider text-sm transition-all duration-300 hover:bg-white hover:text-background hover:shadow-[0_0_25px_rgba(212,175,55,0.6)] hover:-translate-y-0.5"
       >
-        View My Gallery
+        View Friends Gallery
       </Link>
     </section>
   )
