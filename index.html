@@ -3,148 +3,611 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuldeep Yadav | Personal Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Kuldeep Yadav | Portfolio</title>
+    <!-- Font Awesome for Modern Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background-color: #0a0b0d; color: #e2e8f0; scroll-behavior: smooth; }
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: rgba(10, 11, 13, 0.95); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid #1a1d24; }
-        .logo { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 900; color: #d4af37; letter-spacing: 3px; }
-        .nav-links { list-style: none; display: flex; }
-        .nav-links li { margin-left: 20px; }
-        .nav-links a { text-decoration: none; color: #a0aec0; font-weight: 500; font-size: 14px; transition: 0.3s; }
-        .nav-links a:hover { color: #d4af37; }
-        
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.85), rgba(10,11,13,1)), url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1920') no-repeat center center/cover; padding: 0 20px; }
-        .hero h1 { font-family: 'Cinzel', serif; font-size: 50px; color: #ffffff; letter-spacing: 4px; margin-bottom: 5px; text-shadow: 0px 4px 20px rgba(212, 175, 55, 0.3); }
-        .hero p { font-size: 18px; color: #d4af37; margin-bottom: 35px; font-weight: 300; letter-spacing: 2px; }
-        .btn { padding: 12px 35px; background-color: #d4af37; color: #0a0b0d; text-decoration: none; font-weight: 600; border-radius: 30px; transition: 0.3s ease; text-transform: uppercase; letter-spacing: 1px; }
-        .btn:hover { background-color: #ffffff; box-shadow: 0px 0px 25px rgba(212, 175, 55, 0.6); transform: translateY(-2px); }
-        
-        .about { padding: 80px 8%; text-align: center; background-color: #0f1115; }
-        .profile-img { width: 160px; height: 160px; border-radius: 50%; border: 4px solid #d4af37; object-fit: cover; margin-bottom: 20px; box-shadow: 0 0 25px rgba(212, 175, 55, 0.4); }
-        .section-title { font-family: 'Cinzel', serif; font-size: 32px; color: #d4af37; margin-bottom: 30px; letter-spacing: 2px; }
-        .section-title::after { content: ''; display: block; width: 50px; height: 2px; background: #d4af37; margin: 12px auto 0; }
-        .about p { max-width: 800px; margin: 0 auto; font-size: 16px; line-height: 1.8; color: #cbd5e1; }
-        
-        /* 📸 Professional Gallery Section */
-        .gallery { padding: 80px 8%; text-align: center; background-color: #0a0b0d; }
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
-        .gallery-item { width: 100%; height: 380px; object-fit: cover; border-radius: 12px; border: 2px solid #1a1d24; transition: 0.4s ease; cursor: pointer; }
-        .gallery-item:hover { border-color: #d4af37; transform: translateY(-5px); box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25); }
+        /* Modern Minimalist Aesthetic */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        body {
+            background-color: #f9f9f9;
+            color: #2d2d2d;
+            line-height: 1.7;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-        .work { padding: 80px 8%; background-color: #0f1115; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 20px; }
-        .card { background: linear-gradient(145deg, #13161c, #0f1115); padding: 35px 25px; border-radius: 15px; text-align: center; border: 1px solid #1a1d24; transition: 0.4s ease; }
-        .card:hover { transform: translateY(-5px); border-color: #d4af37; }
-        .card h3 { font-family: 'Cinzel', serif; color: #ffffff; font-size: 20px; margin-bottom: 12px; }
-        .card p { color: #94a3b8; font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
-        .card a { color: #d4af37; text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; }
-        
-        /* ✉️ Contact & Footer Styles */
-        .contact { padding: 80px 8%; background-color: #0a0b0d; text-align: center; }
-        .contact p { font-size: 16px; color: #94a3b8; margin-bottom: 15px; }
-        .location-text { font-size: 18px !important; color: #ffffff !important; font-weight: 500; margin-bottom: 25px !important; letter-spacing: 1px; }
-        
-        /* Professional Social Icons Grid */
-        .social-container { display: flex; justify-content: center; gap: 30px; margin-top: 30px; flex-wrap: wrap; }
-        .social-icon-box { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #ffffff; transition: 0.3s ease; width: 100px; }
-        .social-icon-box i { font-size: 36px; margin-bottom: 8px; transition: 0.3s ease; }
-        .social-icon-box span { font-size: 13px; color: #94a3b8; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
-        
-        /* Hover Effects for Branding Colors */
-        .youtube-btn:hover i { color: #ff0000; transform: scale(1.15); filter: drop-shadow(0 0 10px rgba(255,0,0,0.5)); }
-        .instagram-btn:hover i { color: #e1306c; transform: scale(1.15); filter: drop-shadow(0 0 10px rgba(225,48,108,0.5)); }
-        .whatsapp-btn:hover i { color: #25d366; transform: scale(1.15); filter: drop-shadow(0 0 10px rgba(37,211,102,0.5)); }
-        .social-icon-box:hover span { color: #ffffff; }
+        /* Clean Fixed Sticky Navbar */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 1px solid #eaeaea;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* Beautiful Colorful Gradient Logo Text */
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            background: linear-gradient(45deg, #ff007f, #007afc, #ffca28);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        .nav-links a {
+            font-weight: 600;
+            color: #555;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #007afc;
+        }
 
-        footer { background-color: #0a0b0d; text-align: center; padding: 25px; font-size: 13px; color: #475569; border-top: 1px solid #1a1d24; }
-        @media (max-width: 768px) { nav { flex-direction: column; padding: 15px; } .nav-links { margin-top: 10px; } .nav-links li { margin: 0 10px; } .hero h1 { font-size: 35px; } }
+        /* Main Wrapper Views */
+        #main-view {
+            display: block;
+        }
+        
+        /* Dedicated Gallery Screen */
+        #gallery-view {
+            display: none;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Hero / Identity Presentation */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 20px 40px 20px;
+        }
+        .hero-img-container {
+            margin-bottom: 25px;
+        }
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            object-fit: contain;
+            border-radius: 50%;
+            background-color: #ffffff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 4px solid #ffffff;
+            padding: 8px;
+        }
+        .hero h1 {
+            font-size: 38px;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+        .hero-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            font-size: 16px;
+            color: #666;
+            max-width: 600px;
+            margin-bottom: 25px;
+        }
+
+        /* Social Row */
+        .social-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+        .social-icon {
+            font-size: 24px;
+            color: #2d2d2d;
+            transition: transform 0.2s, color 0.2s;
+        }
+        .social-icon:hover {
+            transform: translateY(-3px);
+        }
+        .ic-tg:hover { color: #0088cc; }
+        .ic-yt:hover { color: #ff0000; }
+        .ic-in:hover { color: #e1306c; }
+        .ic-wa:hover { color: #25d366; }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Clean Buttons */
+        .btn {
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: none;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+        .btn-primary { background-color: #1a1a1a; color: #fff; }
+        .btn-outline { background-color: #fff; color: #1a1a1a; border: 2px solid #1a1a1a; }
+
+        /* Sections content layout */
+        .content-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 35px;
+            color: #1a1a1a;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 4px;
+            background-color: #007afc;
+            margin: 8px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Info Display Blocks */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .info-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border: 1px solid #f0f0f0;
+        }
+        .info-card h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .info-card h3 i { color: #007afc; }
+
+        .list-unstyled {
+            list-style: none;
+        }
+        .list-unstyled li {
+            margin-bottom: 12px;
+            color: #555;
+            font-size: 15px;
+        }
+        .list-unstyled li strong {
+            color: #1a1a1a;
+        }
+
+        /* Custom Project Block */
+        .project-wrapper {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.04);
+            border: 1px solid #f0f0f0;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        .project-preview-box {
+            background: #111;
+            height: 240px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .project-preview-box i {
+            font-size: 45px;
+            color: #007afc;
+            margin-bottom: 10px;
+        }
+        .project-meta {
+            padding: 30px;
+            text-align: center;
+        }
+        .project-meta h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+        .project-meta p {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Gallery Nav Area */
+        .gallery-nav-center {
+            text-align: center;
+            padding: 30px 0;
+        }
+        .gallery-trigger {
+            background: #ffffff;
+            border: 2px solid #1a1a1a;
+            color: #1a1a1a;
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .gallery-trigger:hover {
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+        .gallery-trigger i {
+            transition: transform 0.2s;
+        }
+        .gallery-trigger:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Gallery Grid Layout */
+        .gallery-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+        .gallery-header h2 {
+            font-size: 26px;
+            font-weight: 800;
+            color: #1a1a1a;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+        }
+        .grid-item {
+            position: relative;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #e2e2e2;
+            height: 340px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .grid-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 26, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .grid-item:hover .overlay {
+            opacity: 1;
+        }
+        .view-btn {
+            background: #fff;
+            color: #1a1a1a;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 13px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Feedback Area Form */
+        .feedback-box {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border: 1px solid #f0f0f0;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: #fbfbfb;
+            color: #2d2d2d;
+            font-size: 14px;
+            outline: none;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #007afc;
+            background: #fff;
+        }
+        .submit-btn {
+            width: 100%;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .submit-btn:hover { background: #333; }
+
+        /* Footer */
+        footer {
+            background: #ffffff;
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #eaeaea;
+            font-size: 14px;
+            color: #777;
+        }
+        footer span { color: #1a1a1a; font-weight: 700; }
+
+        @media (max-width: 768px) {
+            .navbar { padding: 15px; }
+            .hero h1 { font-size: 30px; }
+            .info-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">AHIR</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#gallery">Friends</a></li>
-            <li><a href="#work">Channel</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <section class="hero" id="home">
-        <h1>KULDEEP YADAV</h1>
-        <p>Digital Creator & AI Concept Artist</p>
-        <a href="#gallery" class="btn">View Friends Gallery</a>
-    </section>
-
-    <section class="about" id="about">
-        <img src="https://i.ibb.co/tTWzytrr/IMG-20251102-WA0056.jpg" class="profile-img" alt="Kuldeep Yadav">
-        <h2 class="section-title">About Me</h2>
-        <p>Ram Ram bhaiyo! Main Kuldeep Yadav, ek digital content creator aur AI artist hoon. Mujhe hyper-realistic 3D images, cinematic short videos aur unique visual storytelling banana pasand hai. YouTube aur alag-alag digital platforms ke zariye main apne creative ideas ko duniya ke samne lata hoon.</p>
-    </section>
-
-    <section class="gallery" id="gallery">
-        <h2 class="section-title">Friends</h2>
-        <p style="color: #94a3b8; margin-bottom: 10px;">Mere aur mere doston ki kuch yaadgaar aur khaas tasveerein</p>
-        
-        <div class="gallery-grid">
-            <img src="https://i.ibb.co/tTWzytrr/IMG-20251102-WA0056.jpg" class="gallery-item" alt="Kuldeep Photo">
-            
-            <img src="https://i.ibb.co/gbqVXVv1/IMG-20260520-013355.png" class="gallery-item" alt="Friend 1">
-            
-            <img src="https://i.ibb.co/0yW4ZDSr/IMG-20251102-WA0189.jpg" class="gallery-item" alt="Friend 2">
-            
-            <img src="https://i.ibb.co/7tGLBnsV/IMG-20260426-WA0008.jpg" class="gallery-item" alt="Friend 3">
+    <!-- Header Navigation bar -->
+    <header>
+        <div class="navbar">
+            <!-- Updated Logo Text with clean aesthetic format -->
+            <div class="logo">Kuldeep Yadav</div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showHomeView()">About</a></li>
+                <li><a href="#experience" onclick="showHomeView()">Details</a></li>
+                <li><a href="#projects" onclick="showHomeView()">Project</a></li>
+                <li><a href="#" onclick="showGalleryView()">Gallery</a></li>
+                <li><a href="#contact" onclick="showHomeView()">Contact</a></li>
+            </ul>
         </div>
-    </section>
+    </header>
 
-    <section class="work" id="work">
-        <h2 class="section-title">My Official Channel</h2>
-        <div class="grid" style="justify-content: center;">
-            <div class="card">
-                <h3>Ai Youngs</h3>
-                <p>Is channel par aapko behtareen AI animations, 3D character designs aur mobile-optimized 9:16 vertical video shorts dekhne ko milenge.</p>
-                <a href="https://youtube.com/@aiyoungs?si=dIHnVaJLX0YrGjg5" target="_blank">Watch Shorts &rarr;</a>
+    <!-- VIEW 1: HOME PAGE CONTENT -->
+    <div id="main-view">
+        <!-- Identity Presenter Hero Frame -->
+        <section class="hero" id="about">
+            <div class="hero-img-container">
+                <img src="https://i.ibb.co/sJ6FcnZm/IMG-20260517-143737.png" alt="Kuldeep Yadav" class="profile-img">
             </div>
-            <div class="card">
-                <h3>Creative Portfolio</h3>
-                <p>Mera personal AI visual collection aur experimental digital art jo maine apne creative journey mein banaya hai.</p>
-                <a href="https://www.instagram.com/mr_cool.009?igsh=cmt5cTIzMHVvMW0=" target="_blank">Check Out &rarr;</a>
+            <h1>A Content Creator 👋</h1>
+            <div class="hero-title">Hi, I'm Kuldeep Yadav</div>
+            
+            <!-- Simple and Elegant English Description added naturally -->
+            <p>I make AI cartoon videos on YouTube and enjoy building elegant web layouts. I love sharing creative stories through my animations. Apart from video editing, I am well-skilled in managing office data, documentation, and designing computer presentations for projects.</p>
+            
+            <!-- Social Identity Icons Row -->
+            <div class="social-row">
+                <a href="https://t.me/Ahirbabu001" target="_blank" class="social-icon ic-tg"><i class="fa-brands fa-telegram"></i></a>
+                <a href="https://youtube.com/@aiyoungs?si=Chip5uGw4bpTYcrl" target="_blank" class="social-icon ic-yt"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.instagram.com/kuldeep_ydvvvv?igsh=M2hlNmdzM2oydzVt" target="_blank" class="social-icon ic-in"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/917255944245" target="_blank" class="social-icon ic-wa"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+
+            <!-- Call Trigger Row -->
+            <div class="cta-buttons">
+                <a href="tel:+917255944245" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Me</a>
+                <a href="https://wa.me/917255944245" target="_blank" class="btn btn-outline"><i class="fa-brands fa-whatsapp"></i> Chat Now</a>
+            </div>
+        </section>
+
+        <!-- Core Details Display Grid -->
+        <section class="content-section" id="experience">
+            <div class="section-title">Overview Details</div>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-graduation-cap"></i> Qualifications</h3>
+                    <ul class="list-unstyled">
+                        <li><strong>10th (2021):</strong> Central Board of Education</li>
+                        <li><strong>12th (2023):</strong> JAC Board (I.Sc Science)</li>
+                        <li><strong>Graduation (3rd Year Appearing):</strong> English Honours from Annada College, Hazaribagh</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-square-poll-horizontal"></i> Professional Skills</h3>
+                    <ul class="list-unstyled">
+                        <li>AI Cartoon & Motion Animations Builder</li>
+                        <li>MS Excel Spreadsheet Calculations</li>
+                        <li>MS Word Layout Document Drafting</li>
+                        <li>Computer Documentations & Slides Design</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Custom Project Showcase -->
+        <section class="content-section" id="projects">
+            <div class="section-title">Featured Project</div>
+            <div class="project-wrapper">
+                <div class="project-preview-box">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <div style="font-weight: 800; font-size: 18px; margin-top:5px;">AI Cartoon Workspace Dash</div>
+                    <div style="font-size: 13px; opacity: 0.8; margin-top: 5px;">Active Platform Live Demo</div>
+                </div>
+                <div class="project-meta">
+                    <h3>AI Cartoon Engine System</h3>
+                    <p>Built a content-focused automated layout management dashboard enabling clean processing for video scripts and assets. Optimized explicitly for rendering hyper-detailed YouTube workflow tasks smoothly.</p>
+                    <div style="display:flex; justify-content:center; gap: 20px;">
+                        <a href="https://youtube.com/@aiyoungs?si=Chip5uGw4bpTYcrl" target="_blank" style="font-weight:700; color:#007afc;"><i class="fa-solid fa-play"></i> Watch Stream</a>
+                        <a href="#contact" style="font-weight:700; color:#555;"><i class="fa-solid fa-code"></i> Request Custom</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Media Link Area -->
+        <section class="content-section" id="gallery-hook">
+            <div class="section-title">Media Showcase</div>
+            <div class="gallery-nav-center">
+                <button type="button" class="gallery-trigger" onclick="showGalleryView()">
+                    Open Photo Gallery <i class="fa-solid fa-arrow-right-long"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Feedback Form Frame -->
+        <section class="content-section" id="contact">
+            <div class="section-title">Don't be shy! Hit me up!</div>
+            <div class="feedback-box">
+                <form action="https://formspree.io/f/xgegpepd" method="POST">
+                    <input type="hidden" name="_to" value="ahirbabu62028@gmail.com">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" rows="4" placeholder="Type your project feedback or message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Direct Feedback</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- VIEW 2: DEDICATED FULL SCREEN GALLERY VIEW -->
+    <div id="gallery-view">
+        <div class="gallery-header">
+            <h2><i class="fa-solid fa-images" style="color:#007afc;"></i> Gallery Collections</h2>
+            <button type="button" class="btn btn-outline" onclick="showHomeView()"><i class="fa-solid fa-arrow-left"></i> Back to Home</button>
+        </div>
+
+        <div class="grid">
+            <!-- Photo 1 -->
+            <div class="grid-item" onclick="window.open('https://i.ibb.co/rGbjbbr9/IMG-20260520-013355.png', '_blank')">
+                <img src="https://i.ibb.co/rGbjbbr9/IMG-20260520-013355.png" alt="Gallery Asset">
+                <div class="overlay">
+                    <span class="view-btn"><i class="fa-solid fa-expand"></i> View Full Image</span>
+                </div>
+            </div>
+
+            <!-- Photo 2 -->
+            <div class="grid-item" onclick="window.open('https://i.ibb.co/1Y7FNk9G/IMG-20260511-204655.png', '_blank')">
+                <img src="https://i.ibb.co/1Y7FNk9G/IMG-20260511-204655.png" alt="Gallery Asset">
+                <div class="overlay">
+                    <span class="view-btn"><i class="fa-solid fa-expand"></i> View Full Image</span>
+                </div>
+            </div>
+
+            <!-- Photo 3 -->
+            <div class="grid-item" onclick="window.open('https://i.ibb.co/LXTLGQSH/IMG-20251102-WA0087.jpg', '_blank')">
+                <img src="https://i.ibb.co/LXTLGQSH/IMG-20251102-WA0087.jpg" alt="Gallery Asset">
+                <div class="overlay">
+                    <span class="view-btn"><i class="fa-solid fa-expand"></i> View Full Image</span>
+                </div>
+            </div>
+
+            <!-- Photo 4 -->
+            <div class="grid-item" onclick="window.open('https://i.ibb.co/zVSFCtCL/IMG-20251102-WA0189.jpg', '_blank')">
+                <img src="https://i.ibb.co/zVSFCtCL/IMG-20251102-WA0189.jpg" alt="Gallery Asset">
+                <div class="overlay">
+                    <span class="view-btn"><i class="fa-solid fa-expand"></i> View Full Image</span>
+                </div>
+            </div>
+
+            <!-- Photo 5 -->
+            <div class="grid-item" onclick="window.open('https://i.ibb.co/s9vQ3gMb/IMG-20251028-WA0008.jpg', '_blank')">
+                <img src="https://i.ibb.co/s9vQ3gMb/IMG-20251028-WA0008.jpg" alt="Gallery Asset">
+                <div class="overlay">
+                    <span class="view-btn"><i class="fa-solid fa-expand"></i> View Full Image</span>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="contact" id="contact">
-        <h2 class="section-title">Let's Connect</h2>
-        <p class="location-text"><i class="fa-solid fa-location-dot" style="color: #d4af37; margin-right: 8px;"></i> India, Jharkhand, Hazaribagh</p>
-        <p>Kisi bhi collaboration, support ya queries ke liye aap mujhse jud sakte hain.</p>
-        
-        <div class="social-container">
-            <a href="https://youtube.com/@aiyoungs?si=dIHnVaJLX0YrGjg5" target="_blank" class="social-icon-box youtube-btn">
-                <i class="fa-brands fa-youtube"></i>
-                <span>YouTube</span>
-            </a>
-            
-            <a href="https://www.instagram.com/mr_cool.009?igsh=cmt5cTIzMHVvMW0=" target="_blank" class="social-icon-box instagram-btn">
-                <i class="fa-brands fa-instagram"></i>
-                <span>Instagram</span>
-            </a>
-            
-            <a href="https://wa.me/917255944245" target="_blank" class="social-icon-box whatsapp-btn">
-                <i class="fa-brands fa-whatsapp"></i>
-                <span>WhatsApp</span>
-            </a>
-        </div>
-    </section>
-
+    <!-- Footer Area -->
     <footer>
-        <p>&copy; 2026 AHIR. Built with Passion by Kuldeep Yadav.</p>
+        <p>Website Designer: <span>Kuldeep Yadav</span> | &copy; 2026 All Rights Reserved.</p>
     </footer>
+
+    <!-- Smart View Logic -->
+    <script>
+        function showGalleryView() {
+            document.getElementById('main-view').style.display = 'none';
+            document.getElementById('gallery-view').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+        function showHomeView() {
+            document.getElementById('gallery-view').style.display = 'none';
+            document.getElementById('main-view').style.display = 'block';
+        }
+    </script>
 
 </body>
 </html>
